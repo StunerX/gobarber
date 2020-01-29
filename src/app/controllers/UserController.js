@@ -19,6 +19,12 @@ class UserController {
             provider
         });
     }
+
+    async get(req, res) {
+        const users = await User.findAll({});
+
+        return res.json(users);
+    }
 }
 
 export default new UserController();
